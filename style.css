@@ -1,0 +1,110 @@
+:root {
+  --body-bg: #FCF6FC;
+  --text-color: #000;
+  --primary-color: #F9A8D4;
+  --secondary-color: #F472B6;
+  --btn-text-color: #fff;
+  --btn-outline-color: #ff036c;
+}
+
+* {
+  font-family: ui-sans-serif,system-ui,sans-serif,"Apple Color Emoji","Segoe UI Emoji",Segoe UI Symbol,"Noto Color Emoji";
+}
+
+body {
+  background-color: var(--body-bg);
+  user-select: none;
+}
+
+.title-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  font-weight: 400;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+  gap: 5rem
+}
+
+.btn {
+  padding: 0.5rem 1.5rem;
+  border-radius: 0.25rem;
+  background-color: var(--primary-color);
+  color: var(--btn-text-color);
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 1.5rem;
+}
+
+.btn:hover {
+  background-color: var(--secondary-color);
+}
+
+.btn:focus{
+  background-color: var(--secondary-color);
+  outline-color: var(--btn-outline-color);
+}   
+
+.absolute {
+  position: absolute;
+}
+
+/* Animations from: https://codepen.io/nelledejones/pen/gOOPWrK */
+
+.hinge {
+  animation: hinge 2s ease normal;
+}
+
+@keyframes hinge {
+  0% { transform: rotate(0); transform-origin: top left; animation-timing-function: ease-in-out; }  
+  20%, 60% { transform: rotate(80deg); transform-origin: top left; animation-timing-function: ease-in-out; }  
+  40% { transform: rotate(60deg); transform-origin: top left; animation-timing-function: ease-in-out; } 
+  80% { transform: rotate(60deg) translateY(0); opacity: 1; transform-origin: top left; animation-timing-function: ease-in-out; } 
+  100% { transform: translateY(700px); opacity: 0; }
+}
+
+.gelatine {
+  animation: gelatine 1.5s infinite;
+  scale: 2;
+}
+
+@keyframes gelatine {
+  from, to { transform: scale(1, 1); }
+  25% { transform: scale(0.9, 1.1); }
+  50% { transform: scale(1.1, 0.9); }
+  75% { transform: scale(0.95, 1.05); }
+}
+
+.hidden {
+  border: 1px solid red;
+  display: none;
+}
+
+/* Heart animation from: https://codepen.io/shubhamsingh718356/pen/PoGNVBb */
+
+.heart {
+  position: fixed;
+  font-size: 1.5rem;
+  top: -1vh;
+  transform: translateY(0);
+  animation: fall 3s linear forwards;
+}
+
+@keyframes fall {
+  from {
+     transform: translateY(0vh) translateX(-10vw); 
+  }
+  to {
+     transform: translateY(105vh) translateX(10vw); 
+  }
+} 
